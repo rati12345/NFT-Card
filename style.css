@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+
+  --Very-dark-blue1: hsl(217, 54%, 11%);
+  --Very-dark-blue2: hsl(216, 50%, 16%);
+  --Very-dark-blue3: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--Very-dark-blue1);
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+.card {
+  max-width: 320px;
+  background-color: var(--Very-dark-blue2);
+  border-radius: 15px;
+  padding: 1rem;
+}
+.image {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: var(--Soft-blue);
+}
+.profile {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.icon {
+  width: 2.5rem;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+span {
+  transition: 0.2s;
+}
+
+span:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+.main-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price,
+.time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price p {
+  color: var(--Cyan);
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid var(--Very-dark-blue3);
+  padding-top: 5px;
+}
+
+.profile-img {
+  max-width: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.profile span {
+  font-weight: 600;
+  color: white;
+  transition: 0.3s;
+}
+.profile span:hover {
+  color: var(--Cyan);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.view-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s;
+}
+.image:hover .view-img:hover {
+  opacity: 1;
+}
+
+.overlay {
+  background-color: var(--Cyan);
+  position: absolute;
+  inset: 0 0 6px 0;
+  border-radius: 15px;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+.overlay:hover {
+  opacity: 0.6;
+}
+.image-wrapper:hover .view-img {
+  opacity: 1;
+}
+.image-wrapper:hover .overlay {
+  opacity: 0.6;
+  cursor: pointer;
+}
